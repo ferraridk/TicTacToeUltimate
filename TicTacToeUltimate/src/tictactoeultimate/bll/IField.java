@@ -1,7 +1,7 @@
-package field;
+package tictactoeultimate.bll;
 
 import java.util.List;
-import move.IMove;
+import tictactoeultimate.bll.IMove;
 
 /**
  *
