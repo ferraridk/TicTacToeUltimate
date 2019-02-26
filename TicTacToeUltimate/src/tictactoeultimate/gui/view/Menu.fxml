@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="tictactoeultimate.gui.controller.MenuController">
-    
+   <children>
+      <SplitPane layoutY="235.0" prefHeight="565.0" prefWidth="800.0">
+         <items>
+            <SplitPane dividerPositions="0.5" prefHeight="140.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <JFXComboBox layoutX="70.0" layoutY="87.0" prefHeight="31.0" prefWidth="263.0" />
+                        <JFXRadioButton layoutX="159.0" layoutY="40.0" prefHeight="21.0" prefWidth="78.0" text="AI Bot" />
+                        <JFXRadioButton layoutX="159.0" layoutY="398.0" text="Human" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="474.0" prefWidth="390.0">
+                     <children>
+                        <JFXComboBox layoutX="72.0" layoutY="85.0" prefHeight="31.0" prefWidth="263.0" />
+                        <JFXRadioButton layoutX="165.0" layoutY="39.0" prefHeight="21.0" prefWidth="78.0" text="AI Bot" />
+                        <JFXRadioButton layoutX="159.0" layoutY="396.0" text="Human" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+      <Pane prefHeight="230.0" prefWidth="800.0" style="-fx-background-color: #000000;">
+         <children>
+            <Text fill="#eb0303" layoutX="242.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKYNET">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
