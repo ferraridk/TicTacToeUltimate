@@ -5,6 +5,7 @@
  */
 package tictactoeultimate.bll;
 
+import java.util.ArrayList;
 import java.util.List;
 import tictactoeultimate.bll.IMove;
 
@@ -14,65 +15,124 @@ import tictactoeultimate.bll.IMove;
  */
 public class Field implements IField
 {
-
+    private String [][] gameBoard = new String [9][9];
+    private String [][] macroBoard = new String [3][3];
+    
+    
+    public Field()
+    {
+        clearBoard();
+    }
+    
     @Override
     public void clearBoard()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        gameBoard = new String [9][9];
+        for (int i = 0; i < gameBoard.length; i++)
+            for (int k = 0; k < gameBoard[i].length; k++) 
+            {
+                gameBoard[i][k] = EMPTY_FIELD;
+            }
+        
+        for (int i = 0; i < macroBoard.length; i++)
+            for (int k = 0; k < macroBoard[i].length; k++) 
+            {
+                macroBoard[i][k] = AVAILABLE_FIELD;
+            }
     }
 
     @Override
     public List<IMove> getAvailableMoves()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<IMove> availMoves = new ArrayList<>();
+        
+        for (int i = 0; i < gameBoard.length; i++)
+            for (int j = 0; j < gameBoard.length; j++)
+            {
+                if (isInActiveMicroboard(i,j) && gameBoard[i][j].equals(EMPTY_FIELD))
+                {
+                   availMoves.add(new Move(i,j)); 
+                }               
+            }
+        return availMoves;
     }
 
     @Override
     public String getPlayerId(int column, int row)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return gameBoard [column][row];
     }
 
     @Override
     public boolean isEmpty()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = 0; i < gameBoard.length; i++)
+            for (int j = 0; j < gameBoard.length; j++)
+            {
+                if (gameBoard[i][j] != EMPTY_FIELD && gameBoard[i][j] != AVAILABLE_FIELD)
+                {
+                    return false;
+                }
+            } 
+        return true;  
     }
 
     @Override
     public boolean isFull()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = 0; i < gameBoard.length; i++)
+            for (int j = 0; j < gameBoard.length; j++)
+            {
+                if (gameBoard[i][j] == EMPTY_FIELD && gameBoard[i][j] == AVAILABLE_FIELD)
+                {
+                    return false;
+                }
+            } 
+        return true;  
     }
 
     @Override
     public Boolean isInActiveMicroboard(int x, int y)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int xTransfer = x>0 ? x/3 : 0;
+        int yTransfer = y>0 ? y/3 : 0;
+        String value = macroBoard [xTransfer][yTransfer];
+        
+        return value.equals(AVAILABLE_FIELD);
     }
 
     @Override
     public String[][] getBoard()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return gameBoard;
     }
 
     @Override
     public String[][] getMacroboard()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return macroBoard;
     }
 
     @Override
     public void setBoard(String[][] board)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.gameBoard = gameBoard;
+//        for (int i = 0; i < 9; i++) {
+//            for (int j = 0; j < 9; j++) {
+//                this.gameBoard[i][j] = board[i][j];
+//            }
+//        }
     }
 
     @Override
     public void setMacroboard(String[][] macroboard)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.macroBoard = macroBoard;
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                this.macroBoard[i][j] = macroboard[i][j];
+//            }
+//        }
     }
     
 }
