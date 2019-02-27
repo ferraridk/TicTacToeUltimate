@@ -19,6 +19,7 @@ public class Move implements IMove
         this.y=y;
     }
 
+
     public void setY(int y){
         this.y=y;
     }

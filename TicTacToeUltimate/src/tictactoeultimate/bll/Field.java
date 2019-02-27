@@ -117,22 +117,22 @@ public class Field implements IField
     public void setBoard(String[][] board)
     {
         this.gameBoard = gameBoard;
-//        for (int i = 0; i < 9; i++) {
-//            for (int j = 0; j < 9; j++) {
-//                this.gameBoard[i][j] = board[i][j];
-//            }
-//        }
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                this.gameBoard[i][j] = board[i][j];
+            }
+        }
     }
 
     @Override
     public void setMacroboard(String[][] macroboard)
     {
         this.macroBoard = macroBoard;
-//        for (int i = 0; i < 3; i++) {
-//            for (int j = 0; j < 3; j++) {
-//                this.macroBoard[i][j] = macroboard[i][j];
-//            }
-//        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                this.macroBoard[i][j] = macroboard[i][j];
+            }
+        }
     }
     
 }
