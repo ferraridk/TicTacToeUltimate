@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -19,14 +21,22 @@
                      <children>
                         <JFXComboBox layoutX="70.0" layoutY="87.0" prefHeight="31.0" prefWidth="263.0" />
                         <JFXRadioButton layoutX="159.0" layoutY="40.0" prefHeight="21.0" prefWidth="78.0" text="AI Bot" />
-                        <JFXRadioButton layoutX="159.0" layoutY="398.0" text="Human" />
+                        <JFXRadioButton layoutX="159.0" layoutY="348.0" text="Human" />
+                        <ImageView cache="true" cacheHint="SCALE" fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../Desktop/terminator_endoskeleton_1020.0.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="474.0" prefWidth="390.0">
                      <children>
                         <JFXComboBox layoutX="72.0" layoutY="85.0" prefHeight="31.0" prefWidth="263.0" />
                         <JFXRadioButton layoutX="165.0" layoutY="39.0" prefHeight="21.0" prefWidth="78.0" text="AI Bot" />
-                        <JFXRadioButton layoutX="159.0" layoutY="396.0" text="Human" />
+                        <JFXRadioButton layoutX="159.0" layoutY="351.0" text="Human" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="104.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>
               </items>

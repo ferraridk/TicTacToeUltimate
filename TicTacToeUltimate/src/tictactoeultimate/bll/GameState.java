@@ -13,35 +13,64 @@ import tictactoeultimate.bll.IField;
  */
 public class GameState implements IGameState
 {
+    IField field;
+        int moveNumber;
+        int roundNumber;
+        int timePerMove = 1000;
+        
+    public GameState()
+    {
+        field = new Field();
+        moveNumber = 0;
+        roundNumber = 0;
+    }
+    
+    public GameState(IGameState gamestate)
+    {
+        field = new Field();
+        field.setMacroboard(gamestate.getField().getMacroboard());
+        field.setBoard(gamestate.getField().getBoard());
+        moveNumber = gamestate.getMoveNumber();
+        roundNumber = gamestate.getRoundNumber();
+    }
 
     @Override
     public IField getField()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return field;
     }
 
     @Override
     public int getMoveNumber()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return moveNumber;
     }
 
     @Override
     public void setMoveNumber(int moveNumber)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.moveNumber = moveNumber;
     }
 
     @Override
     public int getRoundNumber()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return roundNumber;
     }
 
     @Override
     public void setRoundNumber(int roundNumber)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.roundNumber = roundNumber;
     }
     
+    public int getTimePerMove()
+    {
+        return timePerMove;
+    }
+    
+    public void setTimePerMove(int milliSeconds)
+    {
+        this.timePerMove = milliSeconds;
+    }
 }
