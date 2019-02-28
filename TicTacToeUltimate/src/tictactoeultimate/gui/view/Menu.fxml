@@ -28,7 +28,6 @@
                            </image>
                         </ImageView>
                         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
-
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="474.0" prefWidth="390.0">
@@ -51,7 +50,7 @@
                   <Font size="96.0" />
                </font>
             </Text>
-            <Button layoutX="372.0" layoutY="184.0" mnemonicParsing="false" text="Button" />
+            <Button layoutY="184.0" mnemonicParsing="false" onAction="#BtnPressStart" prefHeight="47.0" prefWidth="800.0" text="Start Game" />
          </children>
       </Pane>
    </children>
