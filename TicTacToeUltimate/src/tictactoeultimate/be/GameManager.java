@@ -2,6 +2,7 @@ package tictactoeultimate.be;
 
 import tictactoeultimate.bll.GameState;
 import tictactoeultimate.bll.IBot;
+import tictactoeultimate.bll.IField;
 import tictactoeultimate.bll.IMove;
 import tictactoeultimate.bll.IGameState;
 
@@ -162,6 +163,35 @@ public class GameManager
 
     private void updateMacroboard(IMove move)
     {
-         
+        String[][] macroBoard = currentState.getField().getMacroboard();
+            for (int i = 0; i < macroBoard.length; i++)
+                for (int j = 0; j < macroBoard[i].length; j++) 
+                {
+                    if(macroBoard[i][j].equals(IField.AVAILABLE_FIELD))
+                    {
+                    macroBoard[i][j] = IField.EMPTY_FIELD;
+                    }
+                }
+
+        int xTransfer = move.getX() % 3;
+        int yTransfer = move.getY() % 3;
+
+        if(macroBoard[xTransfer][yTransfer].equals(IField.EMPTY_FIELD))
+        {
+            macroBoard[xTransfer][yTransfer] = IField.AVAILABLE_FIELD;
+        }
+        
+        else 
+        {
+            // Field is already won, set all fields not won to avail.
+            for (int i = 0; i < macroBoard.length; i++)
+                for (int j = 0; j < macroBoard[i].length; j++) 
+                {
+                    if(macroBoard[i][j].equals(IField.EMPTY_FIELD))
+                    {
+                        macroBoard[i][j] = IField.AVAILABLE_FIELD;
+                    }    
+                }
+        }
     }
 }
