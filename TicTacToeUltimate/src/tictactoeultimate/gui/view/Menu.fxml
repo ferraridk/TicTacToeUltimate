@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel.ExpandedPanel?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.scene.control.SplitPane?>
@@ -10,8 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="tictactoeultimate.gui.controller.MenuController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoeultimate.gui.controller.MenuController">
    <children>
       <SplitPane layoutY="235.0" prefHeight="565.0" prefWidth="800.0">
          <items>
@@ -28,6 +29,7 @@
                            </image>
                         </ImageView>
                         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
+                        <ExpansionPanel.ExpandedPanel layoutX="-198.0" layoutY="512.0" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="474.0" prefWidth="390.0">
@@ -45,11 +47,16 @@
       </SplitPane>
       <Pane prefHeight="230.0" prefWidth="800.0" style="-fx-background-color: #000000;">
          <children>
-            <Text fill="#eb0303" layoutX="242.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKYNET">
+            <Text fill="#eb0303" layoutX="235.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKYNET">
                <font>
                   <Font size="96.0" />
                </font>
             </Text>
+            <JFXButton buttonType="RAISED" layoutY="173.0" prefHeight="57.0" prefWidth="800.0" ripplerFill="#daac4a" style="-fx-background-color: ff0000;" text="Start Game" textFill="#d09b28">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
    </children>
