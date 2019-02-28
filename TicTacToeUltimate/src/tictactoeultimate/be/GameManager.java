@@ -115,6 +115,7 @@ public class GameManager {
         }
         
         //Check bot is not equal to null, and throw an exception if it is.
+        //assert trows exeptions if something goes wrong.
         assert(bot != null);
         assert(bot2 != null);
         
