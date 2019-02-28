@@ -6,6 +6,7 @@
 package tictactoeultimate.bll;
 
 import tictactoeultimate.bll.IField;
+import tictactoeultimate.bll.Field;
 
 /**
  *
@@ -64,11 +65,13 @@ public class GameState implements IGameState
         this.roundNumber = roundNumber;
     }
     
+    @Override
     public int getTimePerMove()
     {
         return timePerMove;
     }
     
+    @Override
     public void setTimePerMove(int milliSeconds)
     {
         this.timePerMove = milliSeconds;

@@ -40,7 +40,22 @@ public class GameManager
     private GameMode mode = GameMode.HumanVsHuman;
     private IBot bot1 = null;
     private IBot bot2 = null;
+    private boolean playerGoesFirst = false;
+    private volatile GameOverState gameOver = GameOverState.Active;
+    
+     public void setGameOver(GameOverState state) {
+        gameOver = state;
+    }
+    public GameOverState getGameOver() {
+        return gameOver;
+    }
 
+    public void setCurrentPlayer(int player) {
+        currentPlayer = player;
+    }
+    public int getCurrentPlayer() {
+        return currentPlayer;
+    }
     /**
      * Set's the currentState so the game can begin. Game expected to be played
      * Human vs Human
@@ -62,11 +77,12 @@ public class GameManager
      * load a saved game.
      * @param bot The bot to play against in vsBot mode.
      */
-    public GameManager(IGameState currentState, IBot bot)
+    public GameManager(IGameState currentState, IBot bot, boolean humanPlaysFirst)
     {
         this.currentState = currentState;
         mode = GameMode.HumanVsBot;
         this.bot1 = bot;
+        playerGoesFirst = humanPlaysFirst;
     }
 
     /**
@@ -86,6 +102,10 @@ public class GameManager
         this.bot2 = bot2;
     }
 
+    public IGameState getCurrentState()
+    {
+        return currentState;
+    }
     /**
      * User input driven Update
      *
