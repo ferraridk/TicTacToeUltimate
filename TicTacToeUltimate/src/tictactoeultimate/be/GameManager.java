@@ -28,6 +28,12 @@ public class GameManager
         HumanVsBot,
         BotVsBot
     }
+    
+        public enum GameOverState{
+        Active,
+        Win,
+        Tie
+    }
 
     private final IGameState currentState;
     private int currentPlayer = 0; //player0 == 0 && player1 == 1
