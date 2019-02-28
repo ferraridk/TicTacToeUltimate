@@ -161,13 +161,13 @@ public class TicTacViewController implements Initializable
                         macroboard[i][k] = IField.EMPTY_FIELD;
                     }
                 }
-            }
-            if (model.getGameOverState().equals(GameManager.GameOverState.Tie)) {
-                Platform.runLater(() -> showWinnerPane("TIE"));
-            }
-            else {
-                Platform.runLater(() -> showWinnerPane(currentPlayer + ""));
-            }
+//            }
+//            if (model.getGameOverState().equals(GameManager.GameOverState.Tie)) {
+//                Platform.runLater(() -> showWinnerPane("TIE"));
+//            }
+//            else {
+//                Platform.runLater(() -> showWinnerPane(currentPlayer + ""));
+//            }
         }
     }
      
@@ -235,3 +235,4 @@ public class TicTacViewController implements Initializable
 //        Platform.runLater(() -> stackMain.getChildren().add(gridPane));
 
     }
+}
