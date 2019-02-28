@@ -4,14 +4,13 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoeultimate.gui.controller.MenuController">
+<AnchorPane id="AnchorPane" fx:id="menu" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoeultimate.gui.controller.MenuController">
    <children>
       <SplitPane layoutY="235.0" prefHeight="565.0" prefWidth="800.0">
          <items>
@@ -22,11 +21,6 @@
                         <JFXComboBox layoutX="70.0" layoutY="87.0" prefHeight="31.0" prefWidth="263.0" />
                         <JFXRadioButton layoutX="159.0" layoutY="40.0" prefHeight="21.0" prefWidth="78.0" text="AI Bot" />
                         <JFXRadioButton layoutX="159.0" layoutY="348.0" text="Human" />
-                        <ImageView cache="true" cacheHint="SCALE" fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../../../../Desktop/terminator_endoskeleton_1020.0.jpg" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </AnchorPane>

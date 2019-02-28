@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="stackMain" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.gui.UTTTGameController">
+<StackPane fx:id="stackMain" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoeultimate.gui.controller.TicTacViewController">
    <children>
       <GridPane fx:id="gridMacro" alignment="center" gridLinesVisible="true" hgap="5.0" minHeight="600.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" vgap="5.0">
          <rowConstraints>
