@@ -36,6 +36,7 @@ public class GameManager
         Tie
     }
 
+//    private final String NON_AVAILABLE_MACRO_CELL = "-";
     private final IGameState currentState;
     private int currentPlayer = 0; //player0 == 0 && player1 == 1
     private GameMode mode = GameMode.HumanVsHuman;
@@ -177,6 +178,9 @@ public class GameManager
         System.out.println("Checking move validity against macroboard available field");
         System.out.println("Not currently checking move validity actual board");
         return currentState.getField().isInActiveMicroboard(move.getX(), move.getY());
+//        boolean isInActiveMicroBoard = currentState.getField().isInActiveMicroBoard(move.getX(), move.getY());
+//        boolean isAvailable = currentState.getField().getPlayerId(move.getX(), move.getY()).equals(IField.EMPTY_FIELD);
+//        return isInActiveBoard && isAvailable;
     }
 
     private void updateBoard(IMove move)
@@ -185,11 +189,55 @@ public class GameManager
         gameBoard[move.getX()][move.getY()] = currentPlayer + "";
         currentState.setMoveNumber(currentState.getMoveNumber() + 1);
         if(currentState.getMoveNumber() % 2 == 0) { currentState.setRoundNumber(currentState.getRoundNumber() + 1);}
-        updateMacroboard(move);    
+        updateMacroboard(move);   
+        
+          
+        //currentState.getField().getBoard()[move.getX()][move.getY()] = "" + currentPlayer;
     }
 
     private void updateMacroboard(IMove move)
     {
+        int macroX = move.getX()/3;
+        int macroY = move.getY()/3;
+//        String[][] macroBoard = currentState.getField().getMacroboard();
+        
+//        //Checks if already won. If already won all macro cells available for play
+//        if(currentState.getField().getMacroboard()[macroX][macroY] != IField.AVAILABLE_FIELD
+//                && currentState.getField().getMacroboard()[macroX][macroY] != NON_AVAILABLE_MACRO_CELL)
+//        {
+//            for (int x = 0; x < macroBoard.length; x++)
+//            {
+//                for (int y = 0; y < macroBoard.length[x]; y++)
+//                {
+//                    if(currentState.getField().getMacroboard()[x][y] == NON_AVAILABLE_MACRO_CELL)
+//                    {
+//                        macroBoard[x][y] = IField.AVAILABLE_FIELD;
+//                    }
+//                    
+//                }
+//                
+//            }
+//            
+//            //If already not won, set all to non available., and set only clicked to available
+//            if(currentState.getField().getMacroboard()[macroX][macroY] != IField.NON_AVAILABLE_MACRO_CELL
+//                && currentState.getField().getMacroboard()[macroX][macroY] !=IField.AVAILABLE_FIELD)
+//            {
+//                for (int x = 0; x < macroBoard.length; x++)
+//                {
+//                    for (int y = 0; y < macroBoard.length[x]; y++)
+//                    {
+//                        if(currentState.getField().getMacroboard()[x][y] == IField.AVAILABLE_FIELD)
+//                        {
+//                        macroBoard[x][y] = NON_AVAILBLE_MACRO_CELL;
+//                        }
+//                    
+//                    }
+//                    
+//                }
+//                currentState.getField().getMacroboard()[macroX][macroY] =IField.AVAILABLE_FIELD;
+//            }
+//        }
+        
         String[][] macroBoard = currentState.getField().getMacroboard();
             for (int i = 0; i < macroBoard.length; i++)
                 for (int j = 0; j < macroBoard[i].length; j++) 
