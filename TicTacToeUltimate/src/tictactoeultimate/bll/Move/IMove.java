@@ -1,4 +1,4 @@
-package tictactoeultimate.bll;
+package tictactoeultimate.bll.Move;
 
 /**
  *

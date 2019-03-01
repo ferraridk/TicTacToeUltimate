@@ -1,7 +1,8 @@
-package tictactoeultimate.bll;
+package tictactoeultimate.bll.Field;
 
 import java.util.List;
-import tictactoeultimate.bll.IMove;
+import tictactoeultimate.bll.Move.IMove;
+import tictactoeultimate.bll.Move.IMove;
 
 /**
  *

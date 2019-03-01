@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoeultimate.bll;
+package tictactoeultimate.bll.Bot;
 
-import tictactoeultimate.bll.IGameState;
-import tictactoeultimate.bll.IMove;
+import tictactoeultimate.bll.Bot.IBot;
+import tictactoeultimate.bll.GameState.IGameState;
+import tictactoeultimate.bll.GameState.IGameState;
+import tictactoeultimate.bll.Move.IMove;
+
 
 /**
  *

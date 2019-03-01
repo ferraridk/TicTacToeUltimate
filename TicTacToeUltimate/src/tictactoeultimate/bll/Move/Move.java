@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoeultimate.bll;
+package tictactoeultimate.bll.Move;
+
+import tictactoeultimate.bll.Move.IMove;
 
 /**
  *
@@ -41,6 +43,12 @@ public class Move implements IMove
     @Override
     public String toString() {
         return "("+x+","+y+")";
+    }
+
+    public static class IMove {
+
+        public IMove() {
+        }
     }
 
 }

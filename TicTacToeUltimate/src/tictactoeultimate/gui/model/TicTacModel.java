@@ -8,11 +8,11 @@ package tictactoeultimate.gui.model;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.InvalidationListener;
-import tictactoeultimate.be.GameManager;
-import tictactoeultimate.bll.GameState;
-import tictactoeultimate.bll.IBot;
-import tictactoeultimate.bll.IGameState;
-import tictactoeultimate.bll.IMove;
+import tictactoeultimate.bll.GameManager;
+import tictactoeultimate.bll.GameState.GameState;
+import tictactoeultimate.bll.Bot.IBot;
+import tictactoeultimate.bll.GameState.IGameState;
+import tictactoeultimate.bll.Move.IMove;
 import javafx.beans.Observable;
 
 /**

@@ -1,6 +1,6 @@
-package tictactoeultimate.bll;
+package tictactoeultimate.bll.GameState;
 
-import tictactoeultimate.bll.IField;
+import tictactoeultimate.bll.Field.IField;
 
 /**
  *

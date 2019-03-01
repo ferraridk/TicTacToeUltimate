@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoeultimate.bll;
+package tictactoeultimate.bll.Field;
 
 import java.util.ArrayList;
 import java.util.List;
-import tictactoeultimate.bll.IMove;
+import tictactoeultimate.bll.Move.IMove;
+//import tictactoeultimate.bll.Move.Move.IMove;
+import tictactoeultimate.bll.Move.Move;
 
 /**
  *

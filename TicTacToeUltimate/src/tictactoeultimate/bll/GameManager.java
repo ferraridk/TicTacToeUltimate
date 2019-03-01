@@ -1,10 +1,11 @@
-package tictactoeultimate.be;
+package tictactoeultimate.bll;
 
-import tictactoeultimate.bll.GameState;
-import tictactoeultimate.bll.IBot;
-import tictactoeultimate.bll.IField;
-import tictactoeultimate.bll.IMove;
-import tictactoeultimate.bll.IGameState;
+import tictactoeultimate.bll.GameState.GameState;
+import tictactoeultimate.bll.Bot.IBot;
+import tictactoeultimate.bll.Field.IField;
+import tictactoeultimate.bll.Move.IMove;
+import tictactoeultimate.bll.GameState.IGameState;
+import tictactoeultimate.bll.Move.Move;
 
 /**
  * This is a proposed GameManager for Ultimate Tic-Tac-Toe, the implementation
