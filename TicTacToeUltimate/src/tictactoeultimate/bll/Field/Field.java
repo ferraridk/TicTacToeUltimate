@@ -16,14 +16,14 @@ import tictactoeultimate.bll.Move.Move;
  */
 public class Field implements IField
 {
-    private String[][] gameBoard;
-    private String[][] macroBoard; 
+    private String[][] gameBoard = new String[9][9];
+    private String[][] macroBoard = new String[3][3];
     
     
     public Field()
     {
-        gameBoard = new String[9][9];
-        macroBoard = new String[3][3];
+//        gameBoard = new String[9][9];
+//        macroBoard = new String[3][3];
         clearBoard();
     }
     
@@ -83,7 +83,8 @@ public class Field implements IField
         for (int x = 0; x < gameBoard.length; x++)
             for (int y = 0; y < gameBoard[x].length; y++)
             {
-                if (!gameBoard[x][y].equals(EMPTY_FIELD))
+                if (gameBoard[x][y] != EMPTY_FIELD && gameBoard[x][y] != AVAILABLE_FIELD)
+                //if (!gameBoard[x][y].equals(EMPTY_FIELD))
                 {
                     return false;
                 }
@@ -97,7 +98,8 @@ public class Field implements IField
         for (int x = 0; x < gameBoard.length; x++)
             for (int y = 0; y < gameBoard[x].length; y++)
             {
-                if (!gameBoard[x][y].equals(AVAILABLE_FIELD))
+                if (gameBoard[x][y] == EMPTY_FIELD && gameBoard[x][y] == AVAILABLE_FIELD)
+                //if (!gameBoard[x][y].equals(AVAILABLE_FIELD))
                 {
                     return false;
                 }
@@ -108,10 +110,15 @@ public class Field implements IField
     @Override
     public Boolean isInActiveMicroboard(int x, int y)
     {
-        int macroX =  x/3;
-        int macroY = y/3;
+//        int macroX =  x/3;
+//        int macroY = y/3;
+//        
+//        return macroBoard[macroX][macroY].equals(AVAILABLE_FIELD);
+        int xTransfer = x>0 ? x/3 : 0;
+        int yTransfer = y>0 ? y/3 : 0;
+        String value = macroBoard [xTransfer][yTransfer];
         
-        return macroBoard[macroX][macroY].equals(AVAILABLE_FIELD);
+        return value.equals(AVAILABLE_FIELD);
     }
 
     @Override
