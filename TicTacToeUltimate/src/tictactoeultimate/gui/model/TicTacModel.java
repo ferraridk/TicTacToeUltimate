@@ -21,26 +21,22 @@ import javafx.beans.Observable;
  */
 public class TicTacModel implements Observable
 {
-    private static final int TIME_PER_MOVE = 1000; //Each bot is allowed 1000ms per move
     private final List<InvalidationListener> listeners = new ArrayList<>();
     private final GameManager game;
     
     public TicTacModel() 
     {
         game = new GameManager(new GameState());
-        game.getCurrentState().setTimePerMove(TIME_PER_MOVE);
     }
     
     public TicTacModel(IBot bot, boolean humanPlaysFirst) 
     {
         game = new GameManager(new GameState(), bot, humanPlaysFirst);
-        game.getCurrentState().setTimePerMove(TIME_PER_MOVE);
     }
     
     public TicTacModel(IBot bot1, IBot bot2) 
     {
         game = new GameManager(new GameState(), bot1, bot2);
-        game.getCurrentState().setTimePerMove(TIME_PER_MOVE);
     }
 
     private void notifyAllListeners(){

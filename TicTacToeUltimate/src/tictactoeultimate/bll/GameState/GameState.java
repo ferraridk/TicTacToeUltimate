@@ -64,16 +64,4 @@ public class GameState implements IGameState
     {
         this.roundNumber = roundNumber;
     }
-    
-    @Override
-    public int getTimePerMove()
-    {
-        return timePerMove;
-    }
-    
-    @Override
-    public void setTimePerMove(int milliSeconds)
-    {
-        this.timePerMove = milliSeconds;
-    }
 }

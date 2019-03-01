@@ -14,10 +14,5 @@ public interface IGameState {
     void setMoveNumber(int moveNumber);
 
     int getRoundNumber();
-    void setRoundNumber(int roundNumber);
-    
-    int getTimePerMove();
-    void setTimePerMove(int milliSeconds);
-    
-    
+    void setRoundNumber(int roundNumber);  
 }
