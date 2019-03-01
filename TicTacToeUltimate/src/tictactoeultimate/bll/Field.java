@@ -116,7 +116,7 @@ public class Field implements IField
     @Override
     public void setBoard(String[][] board)
     {
-        this.gameBoard = gameBoard;
+        this.gameBoard = board;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 this.gameBoard[i][j] = board[i][j];
@@ -127,7 +127,7 @@ public class Field implements IField
     @Override
     public void setMacroboard(String[][] macroboard)
     {
-        this.macroBoard = macroBoard;
+        this.macroBoard = macroboard;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 this.macroBoard[i][j] = macroboard[i][j];
