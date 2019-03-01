@@ -48,17 +48,27 @@ public class Field implements IField
     public List<IMove> getAvailableMoves()
     {
         List<IMove> availMoves = new ArrayList<>();
+//        
+//        for (int x = 0; x < gameBoard.length; x++)
+//            for (int y = 0; y < gameBoard[x].length; y++)
+//            {
+//                boolean isEmpty = gameBoard[x][y] == EMPTY_FIELD;
+//                if (isEmpty && isInActiveMicroboard(x, y))
+//                {
+//                   availMoves.add(new Move(x,y)); 
+//                }               
+//            }
+//        return availMoves;
         
-        for (int x = 0; x < gameBoard.length; x++)
+          for (int x = 0; x < gameBoard.length; x++)
             for (int y = 0; y < gameBoard[x].length; y++)
             {
-                boolean isEmpty = gameBoard[x][y] == EMPTY_FIELD;
-                if (isEmpty && isInActiveMicroboard(x, y))
-                {
+                if (isInActiveMicroboard(x,y) && gameBoard[x][y].equals(EMPTY_FIELD))
+                {  
                    availMoves.add(new Move(x,y)); 
-                }               
+                }
             }
-        return availMoves;
+          return availMoves; 
     }
 
     @Override
